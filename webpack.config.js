@@ -1,19 +1,27 @@
-/**
- * Created by swaite on 1/30/2015.
- */
+//var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
-    entry: "./states/app.js",
+
+    entry: {
+        entry: "./states/app.js"
+    },
     output: {
         path: __dirname,
         filename: "bundle.js"
     },
     module: {
         loaders: [
-            { test: /\.js$/, loader: 'jsx-loader?harmony' },
-            { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' }, // use ! to chain loaders
-            { test: /\.css$/, loader: 'style-loader!css-loader' },
-            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }, // inline base64 URLs for <=8k images, direct URLs for the rest
+            { test: /[\/]angular\.js$/, loader: "exports?angular" },
+            { test: /\.js$/, exclude: /node_modules/, loader: "6to5-loader" },
+            { test: /\.html$/, exclude: /node_modules/, loader: "html-loader" },
+            {
+                test: /\.less$/,
+                // Query parameters are passed to node-sass
+                loader: "style!css!less?outputStyle=expanded&" +
+                    "includePaths[]=" +
+                    (path.resolve(__dirname, "./node_modules"))
+            },
             // the url-loader uses DataUrls.
             // the file-loader emits files.
             { test: /\.woff$/,   loader: "url-loader?limit=10000&minetype=application/font-woff" },
@@ -23,7 +31,7 @@ module.exports = {
         ]
     },
     resolve: {
-        // you can now require('file') instead of require('file.coffee')
-        extensions: ['', '.js', '.json', '.less']
+        extensions: ['', '.js', '.json', '.less'],
+        modulesDirectories: ['node_modules', 'states']
     }
 };

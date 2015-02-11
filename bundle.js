@@ -44,23 +44,20 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
+	"use strict";
 	__webpack_require__(1);
 
 
-	var angular = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"vendor/angular\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	/*var angular = require('vendor/angular');
 	var app = angular.module('app', [
-	    __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"vendor/angular_route\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())).name
+	    require('vendor/angular_route').name
 	]);
 
-	app.config(__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./app/app_register_config\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()))(app));
-	app.config(__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./app/app_router_config\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()))(app));
+	app.config(require('./app/app_register_config')(app));
+	app.config(require('./app/app_router_config')(app));
 
 	module.exports = app;
-	global.window.app = app;
-
-	
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+	global.wi*/
 
 /***/ },
 /* 1 */
@@ -76,8 +73,8 @@
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!C:\\Workspace\\q-workspace\\git\\personal\\node_modules\\css-loader\\index.js!C:\\Workspace\\q-workspace\\git\\personal\\node_modules\\less-loader\\index.js!C:\\Workspace\\q-workspace\\git\\personal\\common\\app.less", function() {
-			var newContent = require("!!C:\\Workspace\\q-workspace\\git\\personal\\node_modules\\css-loader\\index.js!C:\\Workspace\\q-workspace\\git\\personal\\node_modules\\less-loader\\index.js!C:\\Workspace\\q-workspace\\git\\personal\\common\\app.less");
+		module.hot.accept("!!C:\\Workspace\\q-workspace\\git\\webpack-angular-bootstrap\\node_modules\\css-loader\\index.js!C:\\Workspace\\q-workspace\\git\\webpack-angular-bootstrap\\node_modules\\less-loader\\index.js?outputStyle=expanded&includePaths[]=C:\\Workspace\\q-workspace\\git\\webpack-angular-bootstrap\\node_modules!C:\\Workspace\\q-workspace\\git\\webpack-angular-bootstrap\\common\\app.less", function() {
+			var newContent = require("!!C:\\Workspace\\q-workspace\\git\\webpack-angular-bootstrap\\node_modules\\css-loader\\index.js!C:\\Workspace\\q-workspace\\git\\webpack-angular-bootstrap\\node_modules\\less-loader\\index.js?outputStyle=expanded&includePaths[]=C:\\Workspace\\q-workspace\\git\\webpack-angular-bootstrap\\node_modules!C:\\Workspace\\q-workspace\\git\\webpack-angular-bootstrap\\common\\app.less");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
