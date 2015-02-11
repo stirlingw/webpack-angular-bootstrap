@@ -18,7 +18,7 @@ module.exports = {
             {
                 test: /\.less$/,
                 // Query parameters are passed to node-sass
-                loader: "style!css!less?outputStyle=expanded&" +
+                loader: "style!css!less-loader?outputStyle=expanded&" +
                     "includePaths[]=" +
                     (path.resolve(__dirname, "./node_modules"))
             },
@@ -27,7 +27,8 @@ module.exports = {
             { test: /\.woff$/,   loader: "url-loader?limit=10000&minetype=application/font-woff" },
             { test: /\.ttf$/,    loader: "file-loader" },
             { test: /\.eot$/,    loader: "file-loader" },
-            { test: /\.svg$/,    loader: "file-loader" }
+            { test: /\.svg$/,    loader: "file-loader" },
+            { test: /\.json$/,  loader: "json-loader" }
         ]
     },
     resolve: {
