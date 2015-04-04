@@ -1,7 +1,6 @@
 # webpack-angular-bootstrap
-webpack, angular, bootstrap
 
-#These are placeholders for convents I want to adopt<br/>
+<h3>These are placeholders for convents I want to adopt</h3>
 https://scotch.io/tutorials/angularjs-best-practices-directory-structure<br/>
 https://medium.com/opinionated-angularjs/scalable-code-organization-in-angularjs-9f01b594bf06<br/>
 https://github.com/toddmotto/angularjs-styleguide<br/><br/>
