@@ -2,18 +2,18 @@
 var path = require('path');
 
 module.exports = {
-
     entry: {
-        entry: "./states/app.js"
+        index: "./index.js",
+        vendors: ["angular-ui-router"]
     },
     output: {
-        path: __dirname,
-        filename: "bundle.js"
+        path: __dirname + "/build",
+        filename: '[name].js'
     },
     module: {
         loaders: [
             { test: /[\/]angular\.js$/, loader: "exports?angular" },
-            { test: /\.js$/, exclude: /node_modules/, loader: "6to5-loader" },
+            { test: /\.js$/, exclude: /node_modules/, loader: "nginjector-loader!babel-loader" },
             { test: /\.html$/, exclude: /node_modules/, loader: "html-loader" },
             {
                 test: /\.less$/,
@@ -31,8 +31,15 @@ module.exports = {
             { test: /\.json$/,  loader: "json-loader" }
         ]
     },
+    externals: {
+        angular: 'angular',
+        lodash: '_'
+    },
     resolve: {
         extensions: ['', '.js', '.json', '.less'],
-        modulesDirectories: ['node_modules', 'states']
+        modulesDirectories: ['app', 'assets', 'node_modules', 'states'],
+        alias: {
+            module: 'module.js'
+        }
     }
 };
