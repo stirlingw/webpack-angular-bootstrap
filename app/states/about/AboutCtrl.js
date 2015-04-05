@@ -1,9 +1,7 @@
-/*require('./module');
+let module = require('../../module');
 
-_module.controller('AboutCtrl', ['$scope',
+module.controller('AboutCtrl', ['$scope',
     function($scope) {
-        //'use strict';
-        console.log('hi');
 
     }
-]);*/
+]);

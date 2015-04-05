@@ -4,7 +4,7 @@ var path = require('path');
 module.exports = {
     entry: {
         index: "./index.js",
-        vendors: ["angular-ui-router"]
+        vendors: ["angular-ui-router", "bootstrap-webpack"]
     },
     output: {
         path: __dirname + "/build",
@@ -17,7 +17,7 @@ module.exports = {
             { test: /\.html$/, exclude: /node_modules/, loader: "html-loader" },
             {
                 test: /\.less$/,
-                // Query parameters are passed to node-sass
+                // Query parameters are passed to node-less
                 loader: "style!css!less-loader?outputStyle=expanded&" +
                     "includePaths[]=" +
                     (path.resolve(__dirname, "./node_modules"))
@@ -25,6 +25,7 @@ module.exports = {
             // the url-loader uses DataUrls.
             // the file-loader emits files.
             { test: /\.woff$/,   loader: "url-loader?limit=10000&minetype=application/font-woff" },
+            { test: /\.woff2$/,   loader: "url-loader?limit=10000&minetype=application/font-woff2" },
             { test: /\.ttf$/,    loader: "file-loader" },
             { test: /\.eot$/,    loader: "file-loader" },
             { test: /\.svg$/,    loader: "file-loader" },
@@ -38,8 +39,6 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.json', '.less'],
         modulesDirectories: ['app', 'assets', 'node_modules', 'states'],
-        alias: {
-            module: 'module.js'
-        }
+        alias: { module: 'module.js' }
     }
 };

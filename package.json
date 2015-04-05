@@ -1,34 +1,35 @@
 {
-    "name": "webpack-angular-bootstrap",
-    "version": "0.0.0",
-    "description": "Webpack Angular Bootstrap",
-    "main": "build/index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node webpack.devServer.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/stirlingw/webpack-angular-bootstrap.git"
-    },
-    "author": "Stirling Waite",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/stirlingw/webpack-angular-bootstrap/issues"
-    },
-    "homepage": "https://github.com/stirlingw/webpack-angular-bootstrap",
-    "devDependencies": {
-        "angular": "^1.3.14",
-        "babel-core": "^4.6.6",
-        "babel-loader": "^4.0.0",
-        "css-loader": "^0.9.1",
-        "exports-loader": "^0.6.2",
-        "html-loader": "^0.2.3",
-        "lodash": "^3.3.1",
-        "nginjector-loader": "0.0.2",
-        "sass-loader": "^0.4.1",
-        "style-loader": "^0.8.3",
-        "webpack": "^1.7.2",
-        "webpack-dev-server": "^1.7.0"
-    }
+  "name": "webpack-angular-bootstrap",
+  "version": "0.0.0",
+  "description": "Webpack Angular Bootstrap",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node webpack.devServer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stirlingw/webpack-angular-bootstrap.git"
+  },
+  "author": "Stirling Waite",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stirlingw/webpack-angular-bootstrap/issues"
+  },
+  "homepage": "https://github.com/stirlingw/webpack-angular-bootstrap",
+  "devDependencies": {
+    "angular": "^1.3.14",
+    "babel-core": "^4.6.6",
+    "babel-loader": "^4.0.0",
+    "css-loader": "^0.9.1",
+    "exports-loader": "^0.6.2",
+    "html-loader": "^0.2.3",
+    "imports-loader": "^0.6.3",
+    "lodash": "^3.3.1",
+    "nginjector-loader": "0.0.2",
+    "sass-loader": "^0.4.1",
+    "style-loader": "^0.8.3",
+    "webpack": "^1.7.2",
+    "webpack-dev-server": "^1.7.0"
+  }
 }
