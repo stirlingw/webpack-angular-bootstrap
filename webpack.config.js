@@ -1,11 +1,17 @@
-//var webpack = require('webpack');
+var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
     entry: {
         index: "./index.js",
-        vendors: ["angular-ui-router", "bootstrap-webpack"]
+        vendors: ["angular-ui-router"]
     },
+    target: "web",
+    debug: true,
+    devtool: "source-map",
+    // We are watching in the gulp.watch, so tell webpack not to watch
+    watch: false,
+    // watchDelay: 300,
     output: {
         path: __dirname + "/build",
         filename: '[name].js'
@@ -15,6 +21,9 @@ module.exports = {
             { test: /[\/]angular\.js$/, loader: "exports?angular" },
             { test: /\.js$/, exclude: /node_modules/, loader: "nginjector-loader!babel-loader" },
             { test: /\.html$/, exclude: /node_modules/, loader: "html-loader" },
+            { test: /\.gif/, loader: "file-loader!url-loader?limit=10000&minetype=image/gif" },
+            { test: /\.jpg/, loader: "file-loader!url-loader?limit=10000&minetype=image/jpg" },
+            { test: /\.png/, loader: "file-loader!url-loader?limit=10000&minetype=image/png" },
             {
                 test: /\.less$/,
                 // Query parameters are passed to node-less
@@ -30,15 +39,26 @@ module.exports = {
             { test: /\.eot$/,    loader: "file-loader" },
             { test: /\.svg$/,    loader: "file-loader" },
             { test: /\.json$/,  loader: "json-loader" }
+        ],
+        noParse: [
+            /\.min\.js/,
+            /[\/\\]angular\.js$/,
+            /[\/\\]angular-ui-router\.js$/,
+            /[\/\\]ui-bootstrap-tpls\.js$/
         ]
     },
+    plugins: [
+        // If you want to minify everything
+        //new webpack.optimize.UglifyJsPlugin()
+    ],
     externals: {
         angular: 'angular',
         lodash: '_'
     },
     resolve: {
         extensions: ['', '.js', '.json', '.less'],
-        modulesDirectories: ['app', 'assets', 'node_modules', 'states'],
+        // Tell webpack to look for required files in bower and node
+        modulesDirectories: ['bower_components','node_modules','app','assets','states'],
         alias: { module: 'module.js' }
     }
 };
