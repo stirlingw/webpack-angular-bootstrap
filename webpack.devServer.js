@@ -1,9 +1,9 @@
-var server    = require('webpack-dev-server')
-var config    = require('./webpack.config.js')
+var server    = require('webpack-dev-server');
+var config    = require('./webpack.config.js');
 var webpack    = require('webpack');
 
-var devConfig  = Object.create(config)
-devConfig.watch = true
+var devConfig  = Object.create(config);
+devConfig.watch = true;
 
 var compiler = webpack(devConfig);
 

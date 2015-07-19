@@ -1,6 +1,6 @@
+
 var webpack = require('webpack');
 var path = require('path');
-
 module.exports = {
     entry: {
         index: "./index.js",
@@ -40,6 +40,8 @@ module.exports = {
             { test: /\.svg$/,    loader: "file-loader" },
             { test: /\.json$/,  loader: "json-loader" }
         ],
+        // Put paths to files in here which are already packaged for production, such as vendor
+        // libs that have been minimized already. This is going to bypass any checks on our end
         noParse: [
             /\.min\.js/,
             /[\/\\]angular\.js$/,
@@ -58,7 +60,9 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.json', '.less'],
         // Tell webpack to look for required files in bower and node
-        modulesDirectories: ['bower_components','node_modules','app','assets','states'],
-        alias: { module: 'module.js' }
+        modulesDirectories: ['bower_components','node_modules', 'build', 'assets'],
+        alias: {
+            module: 'module.js'
+        }
     }
 };
