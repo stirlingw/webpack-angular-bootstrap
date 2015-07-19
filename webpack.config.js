@@ -21,15 +21,14 @@ module.exports = {
             { test: /[\/]angular\.js$/, loader: "exports?angular" },
             { test: /\.js$/, exclude: /node_modules/, loader: "nginjector-loader!babel-loader" },
             { test: /\.html$/, exclude: /node_modules/, loader: "html-loader" },
-            { test: /\.gif/, loader: "file-loader!url-loader?limit=10000&minetype=image/gif" },
-            { test: /\.jpg/, loader: "file-loader!url-loader?limit=10000&minetype=image/jpg" },
-            { test: /\.png/, loader: "file-loader!url-loader?limit=10000&minetype=image/png" },
+            { test: /\.gif/, exclude: /node_modules/, loader: "file-loader!url-loader?limit=10000&minetype=image/gif" },
+            { test: /\.jpg/, exclude: /node_modules/, loader: "file-loader!url-loader?limit=10000&minetype=image/jpg" },
+            { test: /\.png/, exclude: /node_modules/, loader: "file-loader!url-loader?limit=10000&minetype=image/png" },
             {
                 test: /\.less$/,
                 // Query parameters are passed to node-less
                 loader: "style!css!less-loader?outputStyle=expanded&" +
-                    "includePaths[]=" +
-                    (path.resolve(__dirname, "./node_modules"))
+                    "includePaths[]=" + (path.resolve(__dirname, "./node_modules"))
             },
             // the url-loader uses DataUrls.
             // the file-loader emits files.
@@ -60,7 +59,7 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.json', '.less'],
         // Tell webpack to look for required files in bower and node
-        modulesDirectories: ['bower_components','node_modules', 'build', 'assets'],
+        modulesDirectories: ['bower_components','node_modules'],
         alias: {
             module: 'module.js'
         }

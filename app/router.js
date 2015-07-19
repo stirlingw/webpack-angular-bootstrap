@@ -11,12 +11,12 @@ module.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('/home',{
             url:'/home',
-            templateUrl:'/app/states/home/homeView.html',
+            templateUrl:'/app/states/home/HomeView.html',
             controller:'HomeCtrl'
         })
         .state('/about',{
             url:'/about',
-            templateUrl:'/app/states/about/aboutView.html',
+            templateUrl:'/app/states/about/AboutView.html',
             controller:'AboutCtrl'
         });
 });
